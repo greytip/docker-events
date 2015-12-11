@@ -43,7 +43,7 @@ def loop(sock, config=None):
     if config is None:
         config = {}
 
-    client = docker.Client(base_url=sock)
+    client = docker.Client(base_url=sock, version='1.19')
 
     # fake a running event for all running containers
     for container in client.containers():
